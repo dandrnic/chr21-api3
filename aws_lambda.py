@@ -2,12 +2,12 @@
 
 from mangum import Mangum
 
-from main import app, load_genes
+from database import init_db
+from main import app
 
-
-# Warm the pandas dataset cache during cold starts so the first request served
+# Warm the SQLite dataset cache during cold starts so the first request served
 # by Lambda is fast.
-load_genes()
+init_db()
 
 # ``lifespan="auto"`` ensures FastAPI startup/shutdown events run correctly in
 # the Lambda runtime managed by Mangum.
