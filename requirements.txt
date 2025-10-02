@@ -1,4 +1,1 @@
-fastapi==0.99.0
-mangum
-pandas
-uvicorn
+sqlalchemy>=1.4,<2.0
